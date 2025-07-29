@@ -15,23 +15,27 @@ npm install
 
 ## Running the API
 To run the API in your terminal directly, run this command:
+
 ```bash
 npm run dev
 ```
 
-And then in another terminal tab, you can use the curl method to send you inputs and get the API output in JSON format, here is an example for the following inputs: 
+And then in another terminal tab, you can use the curl method to send you inputs and get the API output in JSON format, 
+here is an example for the following inputs: 
 {
   "technology": "DevOps",
   "role": "Software Engineer",
   "environment": "Cloud Infrastructure"
 }
+
 ```bash
 curl -X POST http://localhost:3000/api/scenario \
   -H "Content-Type: application/json" \
-  -d '{"technology":"DevOps","role":"Software Engineer","environment":"Cloud Infrastructure"}'
+  -d '{"technology":"DevOps","role":"Software Engineer","environment":"Cloud Infrastructure"}' | jq
 ```
 
 You should get an output similar to this one:
+
 ```bash
 {
   "input": {
